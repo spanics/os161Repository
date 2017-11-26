@@ -86,6 +86,9 @@ int runprogram(char *progname);
 /* Kernel menu system. */
 void menu(char *argstr);
 
+/* Hello stuff. */
+void hello(void);
+
 /* The main function, called from start.S. */
 void kmain(char *bootstring);
 
