@@ -313,7 +313,7 @@ cmd_mount(int nargs, char **args)
 	int i;
 
 	if (nargs != 3) {
-		kprintf("Usage: mount fstype device:\n");
+kprintf("Usage: mount fstype device:\n");
 		return EINVAL;
 	}
 
@@ -459,6 +459,7 @@ static const char *testmenu[] = {
 	"[tt1] Thread test 1                 ",
 	"[tt2] Thread test 2                 ",
 	"[tt3] Thread test 3                 ",
+	"[tft] Thread fun test(lab 5)        ",
 #if OPT_NET
 	"[net] Network test                  ",
 #endif
@@ -474,8 +475,9 @@ static const char *testmenu[] = {
 	"[fs3] FS write stress       (4)     ",
 	"[fs4] FS write stress 2     (4)     ",
 	"[fs5] FS create stress      (4)     ",
+	"[l4b] Print Lab 4 message           ",
 	NULL
-};
+}; //HERE IS LAB TEST CODE!!!!!
 
 static
 int
@@ -516,6 +518,17 @@ cmd_mainmenu(int n, char **a)
 	(void)a;
 
 	showmenu("OS/161 kernel menu", mainmenu);
+	return 0;
+}
+
+//Lab 4 lab test command!!!
+static
+int
+labTest(int n, char **a) {
+	(void)n;
+	(void)a;
+
+	kprintf("Lab 4 Test please ignore\n");
 	return 0;
 }
 
@@ -571,6 +584,8 @@ static struct {
 	{ "tt1",	threadtest },
 	{ "tt2",	threadtest2 },
 	{ "tt3",	threadtest3 },
+	/*Lab 5 test command*/
+	{ "tft", threadFunTest },
 	{ "sy1",	semtest },
 
 	/* synchronization assignment tests */
@@ -587,6 +602,9 @@ static struct {
 	{ "fs3",	writestress },
 	{ "fs4",	writestress2 },
 	{ "fs5",	createstress },
+	
+	/*LAB 4 TEST!!!!!*/
+	{ "l4b", labTest },
 
 	{ NULL, NULL }
 };

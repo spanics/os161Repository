@@ -59,6 +59,8 @@ int threadtest3(int, char **);
 int semtest(int, char **);
 int locktest(int, char **);
 int cvtest(int, char **);
+/*Lab 5 thread test*/
+int threadFunTest(int, char **);
 
 #ifdef UW
 /* Another thread and synchronization test */
