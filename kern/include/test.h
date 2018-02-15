@@ -61,6 +61,10 @@ int locktest(int, char **);
 int cvtest(int, char **);
 /*Lab 5 thread test*/
 int threadFunTest(int, char **);
+/*Project 1 tests*/
+int unsafeThreadTest(int, char **);
+int lockThreadCounter(int, char **);
+int spinlockThreadCounter(int, char **);
 
 #ifdef UW
 /* Another thread and synchronization test */
